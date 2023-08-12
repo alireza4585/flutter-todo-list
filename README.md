@@ -1,16 +1,14 @@
-# flutter_to_do_list
+##Flutter To-Do App with Firebase
 
-A new Flutter project.
 
-## Getting Started
+This repository contains a simple Flutter to-do app that utilizes Firebase for backend services. The app allows users to create, manage, and organize their to-do tasks seamlessly. Firebase is integrated for real-time data synchronization, authentication, and cloud storage.
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+s
+Features
+User Authentication: The app supports user registration and authentication using Firebase Authentication.
+Real-time Data Sync: To-do tasks are synchronized in real-time across multiple devices.
+Add and Edit Tasks: Users can add new tasks and edit existing ones with ease.
+Mark as Complete: Tasks can be marked as complete, and the app provides a visual indication for completed tasks.
+Delete Tasks: Users can delete tasks they no longer need.
+Task Categories: Tasks can be organized into different categories or projects.
