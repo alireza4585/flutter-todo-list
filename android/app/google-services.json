@@ -9,7 +9,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:727830725517:android:cb99236c157d93349b33c4",
         "android_client_info": {
-          "package_name": "com.example.todolistwithfirestor"
+          "package_name": "com.example.flutter_to_do_list"
         }
       },
       "oauth_client": [

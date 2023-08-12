@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_to_do_list/const/colors.dart';
+import 'package:flutter_to_do_list/data/auth_data.dart';
 
 class LogIN_Screen extends StatefulWidget {
   final VoidCallback show;
@@ -83,20 +84,25 @@ class _LogIN_ScreenState extends State<LogIN_Screen> {
   Widget Login_bottom() {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 15),
-      child: Container(
-        alignment: Alignment.center,
-        width: double.infinity,
-        height: 50,
-        decoration: BoxDecoration(
-          color: custom_green,
-          borderRadius: BorderRadius.circular(10),
-        ),
-        child: Text(
-          'LogIn',
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 23,
-            fontWeight: FontWeight.bold,
+      child: GestureDetector(
+        onTap: () {
+          AuthenticationRemote().login(email.text, password.text);
+        },
+        child: Container(
+          alignment: Alignment.center,
+          width: double.infinity,
+          height: 50,
+          decoration: BoxDecoration(
+            color: custom_green,
+            borderRadius: BorderRadius.circular(10),
+          ),
+          child: Text(
+            'LogIn',
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 23,
+              fontWeight: FontWeight.bold,
+            ),
           ),
         ),
       ),
@@ -123,7 +129,7 @@ class _LogIN_ScreenState extends State<LogIN_Screen> {
               ),
               contentPadding:
                   EdgeInsets.symmetric(horizontal: 15, vertical: 15),
-              hintText: 'typeName',
+              hintText: typeName,
               enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(10),
                 borderSide: BorderSide(
