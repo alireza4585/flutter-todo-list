@@ -4,7 +4,7 @@
 This repository contains a simple Flutter to-do app that utilizes Firebase for backend services. The app allows users to create, manage, and organize their to-do tasks seamlessly. Firebase is integrated for real-time data synchronization, authentication, and cloud storage.
 
 
-# Features
+### Features
 
 . User Authentication: The app supports user registration and authentication using Firebase Authentication.
 . Real-time Data Sync: To-do tasks are synchronized in real-time across multiple devices.
