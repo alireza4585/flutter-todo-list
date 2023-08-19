@@ -13,10 +13,6 @@ bool isDone = false;
 class _Task_WidgetState extends State<Task_Widget> {
   @override
   Widget build(BuildContext context) {
-    return get();
-  }
-
-  Widget get() {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
       child: Container(
