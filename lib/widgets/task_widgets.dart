@@ -13,75 +13,74 @@ bool isDone = false;
 class _Task_WidgetState extends State<Task_Widget> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: backgroundColors,
-      body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
-          child: Container(
-            width: double.infinity,
-            height: 130,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10),
-              color: Colors.white,
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.grey.withOpacity(0.2),
-                  spreadRadius: 5,
-                  blurRadius: 7,
-                  offset: Offset(0, 2),
-                ),
-              ],
+    return get();
+  }
+
+  Widget get() {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+      child: Container(
+        width: double.infinity,
+        height: 130,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10),
+          color: Colors.white,
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.withOpacity(0.2),
+              spreadRadius: 5,
+              blurRadius: 7,
+              offset: Offset(0, 2),
             ),
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 10),
-              child: Row(
-                children: [
-                  // image
-                  imageee(),
-                  SizedBox(width: 25),
-                  // title and subtitle
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
+          ],
+        ),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 10),
+          child: Row(
+            children: [
+              // image
+              imageee(),
+              SizedBox(width: 25),
+              // title and subtitle
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    SizedBox(height: 5),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        SizedBox(height: 5),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              'title',
-                              style: TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            Checkbox(
-                              activeColor: custom_green,
-                              value: isDone,
-                              onChanged: (value) {
-                                setState(() {
-                                  isDone = !isDone;
-                                });
-                              },
-                            )
-                          ],
-                        ),
                         Text(
-                          'subtitle',
+                          'title',
                           style: TextStyle(
-                              fontSize: 16,
-                              fontWeight: FontWeight.w400,
-                              color: Colors.grey.shade400),
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
-                        Spacer(),
-                        edit_time()
+                        Checkbox(
+                          activeColor: custom_green,
+                          value: isDone,
+                          onChanged: (value) {
+                            setState(() {
+                              isDone = !isDone;
+                            });
+                          },
+                        )
                       ],
                     ),
-                  ),
-                ],
+                    Text(
+                      'subtitle',
+                      style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w400,
+                          color: Colors.grey.shade400),
+                    ),
+                    Spacer(),
+                    edit_time()
+                  ],
+                ),
               ),
-            ),
+            ],
           ),
         ),
       ),
