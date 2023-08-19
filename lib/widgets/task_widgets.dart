@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_to_do_list/const/colors.dart';
+import 'package:flutter_to_do_list/screen/edit_screen.dart';
 
 class Task_Widget extends StatefulWidget {
   const Task_Widget({super.key});
@@ -117,30 +118,37 @@ class _Task_WidgetState extends State<Task_Widget> {
             ),
           ),
           SizedBox(width: 20),
-          Container(
-            width: 90,
-            height: 28,
-            decoration: BoxDecoration(
-              color: Color(0xffE2F6F1),
-              borderRadius: BorderRadius.circular(18),
-            ),
-            child: Padding(
-              padding: const EdgeInsets.symmetric(
-                horizontal: 12,
-                vertical: 6,
+          GestureDetector(
+            onTap: () {
+              Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) => Edit_Screen(),
+              ));
+            },
+            child: Container(
+              width: 90,
+              height: 28,
+              decoration: BoxDecoration(
+                color: Color(0xffE2F6F1),
+                borderRadius: BorderRadius.circular(18),
               ),
-              child: Row(
-                children: [
-                  Image.asset('images/icon_edit.png'),
-                  SizedBox(width: 10),
-                  Text(
-                    'edit',
-                    style: TextStyle(
-                      fontSize: 14,
-                      fontWeight: FontWeight.bold,
+              child: Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 12,
+                  vertical: 6,
+                ),
+                child: Row(
+                  children: [
+                    Image.asset('images/icon_edit.png'),
+                    SizedBox(width: 10),
+                    Text(
+                      'edit',
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
           ),
