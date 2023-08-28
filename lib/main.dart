@@ -1,8 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_to_do_list/screen/add_note_screen.dart';
-import 'package:flutter_to_do_list/screen/home.dart';
-import 'package:flutter_to_do_list/widgets/task_widgets.dart';
+import 'package:flutter_to_do_list/auth/main_page.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -17,7 +15,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Home_Screen(),
+      home: Main_Page(),
     );
   }
 }
