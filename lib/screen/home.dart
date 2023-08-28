@@ -1,11 +1,8 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_to_do_list/const/colors.dart';
-import 'package:flutter_to_do_list/data/firestor.dart';
 import 'package:flutter_to_do_list/screen/add_note_screen.dart';
-import 'package:flutter_to_do_list/widgets/task_widgets.dart';
+import 'package:flutter_to_do_list/widgets/stream_note.dart';
 
 class Home_Screen extends StatefulWidget {
   const Home_Screen({super.key});
@@ -34,41 +31,35 @@ class _Home_ScreenState extends State<Home_Screen> {
         ),
       ),
       body: SafeArea(
-          child: NotificationListener<UserScrollNotification>(
-        onNotification: (notification) {
-          if (notification.direction == ScrollDirection.forward) {
-            setState(() {
-              show = true;
-            });
-          }
-          if (notification.direction == ScrollDirection.reverse) {
-            setState(() {
-              show = false;
-            });
-          }
-          return true;
-        },
-        child: StreamBuilder<QuerySnapshot>(
-            stream: Firestore_Datasource().stream(),
-            builder: (context, snapshot) {
-              if (!snapshot.hasData) {
-                return CircularProgressIndicator();
-              }
-              final noteslist = Firestore_Datasource().getNotes(snapshot);
-              return ListView.builder(
-                itemBuilder: (context, index) {
-                  final note = noteslist[index];
-                  return Dismissible(
-                      key: UniqueKey(),
-                      onDismissed: (direction) {
-                        Firestore_Datasource().delet_note(note.id);
-                      },
-                      child: Task_Widget(note));
-                },
-                itemCount: noteslist.length,
-              );
-            }),
-      )),
+        child: NotificationListener<UserScrollNotification>(
+          onNotification: (notification) {
+            if (notification.direction == ScrollDirection.forward) {
+              setState(() {
+                show = true;
+              });
+            }
+            if (notification.direction == ScrollDirection.reverse) {
+              setState(() {
+                show = false;
+              });
+            }
+            return true;
+          },
+          child: Column(
+            children: [
+              Stream_note(false),
+              Text(
+                'isDone',
+                style: TextStyle(
+                    fontSize: 16,
+                    color: Colors.grey.shade500,
+                    fontWeight: FontWeight.bold),
+              ),
+              Stream_note(true),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }
