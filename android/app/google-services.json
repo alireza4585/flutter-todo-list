@@ -7,9 +7,38 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:727830725517:android:cb99236c157d93349b33c4",
+        "mobilesdk_app_id": "1:727830725517:android:e1aba9d6fc5baaad9b33c4",
         "android_client_info": {
           "package_name": "com.example.flutter_to_do_list"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "727830725517-m312sdhm37vu2fojhk13go7cl0r215ok.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCRm_zOokLV-Nb_5zpJnjAuJlD93gA5e3o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "727830725517-m312sdhm37vu2fojhk13go7cl0r215ok.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:727830725517:android:cb99236c157d93349b33c4",
+        "android_client_info": {
+          "package_name": "com.example.todolistwithfirestor"
         }
       },
       "oauth_client": [
